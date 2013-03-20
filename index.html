@@ -2,50 +2,35 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-        <title>iPlayer</title>
+        <title>theBestPlayer</title>
         <meta content="" name="description" />
         <meta content="" name="keywords" />
 
         <link type="text/css" href="css/styles.css" rel="stylesheet" />
-        <link href="css/smoothness/jquery-ui-1.10.1.custom.css" rel="stylesheet">
-        <link href="css/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+        <link type="text/css" href="jplayer/css/blue.monday/jplayer.blue.monday.css" rel="stylesheet" />
 
-        <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.10.1.custom.js"></script>
-        <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="jplayer/js/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="jplayer/js/jplayer.playlist.min.js"></script>
 
         <script type="text/javascript" src="js/myscript.js"></script>
-        <script type="text/javascript">
-//<![CDATA[
-$(document).ready(function(){
-
-    $("#jquery_jplayer_1").jPlayer({
-        ready: function (event) {
-            $(this).jPlayer("setMedia", {
-                m4a:"http://www.jplayer.org/audio/m4a/TSP-01-Cro_magnon_man.m4a",
-                oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
-            });
-        },
-        swfPath: "js",
-        supplied: "m4a, oga",
-        wmode: "window"
-    });
-});
-//]]>
-</script>
 
     </head>
     <body>
         <div id="wrapper">
+            <div id="header">
 
-            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 
-        <div id="jp_container_1" class="jp-audio">
-            <div class="jp-type-single">
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+        <div id="jp_container_1" class="jp-audio" style="float:left">
+            <div class="jp-type-playlist">
                 <div class="jp-gui jp-interface">
                     <ul class="jp-controls">
+                        <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
                         <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
                         <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                        <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
                         <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
                         <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
                         <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
@@ -62,16 +47,17 @@ $(document).ready(function(){
                     <div class="jp-time-holder">
                         <div class="jp-current-time"></div>
                         <div class="jp-duration"></div>
-
-                        <ul class="jp-toggles">
-                            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-                            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-                        </ul>
                     </div>
+                    <ul class="jp-toggles">
+                        <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+                        <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+                        <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                        <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                    </ul>
                 </div>
-                <div class="jp-title">
+                <div class="jp-playlist">
                     <ul>
-                        <li>Cro Magnon Man</li>
+                        <li></li>
                     </ul>
                 </div>
                 <div class="jp-no-solution">
@@ -81,6 +67,176 @@ $(document).ready(function(){
             </div>
         </div>
 
-        </div>   <!-- end wrapper -->
+
+                <div id="controls">
+                    <div id="viewcontrol">
+                        <a href="#" class="list"></a>
+                        <a href="#" class="list_img"></a>
+                        <a href="#" class="blocks active"></a>
+                        <a href="#" class="coverflow"></a>
+                    </div>
+                    <div id="search">
+                        <form method="POST">
+                            
+                            <input type="text" name="s" placeholder="Search Music" >
+                            <button class="search" type="submit" name="submit"></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>  <!-- end header -->
+
+            <div id="main">
+                <div id="left">
+                    <div id="library">
+                        <span>LIBRARY</span>
+                        <ul>
+                            <li class="music">
+                                Music
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="nowplay">
+                        <div class="title">
+                            Now Playing
+                        </div>
+                        <div class="nowsong">
+                            <img src="img/img0.jpg" alt="song">
+                        </div>
+                        <div class="footer">
+                            <a href="#" class="plus"></a>
+                            <a href="#" class="shuffle active"></a>
+                            <a href="#" class="repeat"></a>
+                            <a href="#" class="toggle"></a>
+                        </div>
+                    </div>
+                </div>  <!-- end left -->
+
+                <div id="right">
+
+                    <div id="options">
+                        <a href="#" class="noactive">Albums</a>
+                        <a href="#">Artist</a>
+                        <a href="#">Genre</a>
+                        <a href="#">Composers</a>
+                    </div>
+
+                    <div id="songs">
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img9.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img8.jpg" alt="">
+                            <p class="albom">Mind Broken</p>
+                            <p>Biblio</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img7.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img6.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img0.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img5.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img4.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img3.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img2.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img1.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img2.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img9.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+                        <div class="song">
+                            <a href="#">
+                            <img src="img/img5.jpg" alt="">
+                            <p class="albom">Torches</p>
+                            <p>Foster the People</p>
+                            </a>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>  <!-- end right -->
+            </div>  <!-- end main -->
+
+        </div>  <!-- end wrapper -->
     </body>
 </html>

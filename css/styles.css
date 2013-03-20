@@ -44,10 +44,238 @@ table {
 
 body {
 	background-color: #D5D5D5;
+	font-family: "Segoe UI";
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	color: #6b6b6b;
+}
+
+a:HOVER {
+	color: #E5E5E5;
 }
 
 #wrapper {
 	margin: 0 auto;
-	width: 800px;
-	margin-top: 30px;
+	width: 1310px;
+	height: 710px;
+	margin-top: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.25);
 }
+
+#header {
+	width: 100%;
+	height: 82px;
+	background-color: #F4F4F4;
+	overflow: hidden;
+}
+
+#controls {
+	float: right;
+	padding: 26px;
+	overflow: hidden;
+	border-right: 1px solid #E5E5E5;
+
+	margin-right: 130px;
+}
+
+#viewcontrol {
+	overflow: hidden;
+	padding: 9px 4px;
+	float: left;
+}
+
+#viewcontrol a{
+	float: left;
+	margin:0 6px;
+	background-image: url("../img/csg-5148a2e38765b.png");
+	background-repeat: no-repeat;
+}
+
+#search {
+	height: 30px;
+	width: 205px;
+	margin: 0 10px;
+	float: left;
+	background-color: #FFFFFF;
+}
+
+#search input{
+	height: 30px;
+	width: 175px;
+	border: 0px;
+	padding: 0px;
+	margin-left: -30px;
+	padding-left: 30px;
+	float: right;
+	font-family: "Segoe UI";
+	font-size: 14px;
+}
+
+#search input:focus {
+	box-shadow: 0 0 2px #27a7fa;
+	outline: none;
+}
+
+#search button{
+	margin-top: 7px;
+	margin-left: 9px;
+	float: left;
+	background-image: url("../img/csg-5148a2e38765b.png");
+	background-repeat: no-repeat;
+	background-color: transparent;
+	cursor: pointer;
+	border: 0px;
+}
+
+#main {
+	width: 100%;
+	height: 628px;
+	overflow: hidden;
+	background-color: #FAFAFA;
+
+}
+
+#main #left {
+	float: left;
+	width: 202px;
+	height: 100%;
+	background-color: #EEEEEE;
+}
+
+#library {
+	padding: 35px;
+	height: 320px
+}
+
+#library span {
+	font-weight: bold;
+	color: #7b7b7b;
+}
+
+#library ul li {
+	color: #50aefa;
+	padding-left: 25px;
+	margin-top: 16px; 
+	margin-left: 20px;
+	height: 17px;
+	background-image: url("../img/csg-5148a2e38765b.png");
+	background-repeat: no-repeat;
+
+}
+
+#nowplay .title {
+	background-color: #27a7fa;
+	padding:7px 35px;
+	color: #FAFAFA;
+	z-index: 10;
+	position: relative;
+
+}
+
+#nowplay .nowsong {
+	margin-top: -18px;
+	height: 202px;
+	width: 202px;
+	
+}
+
+#nowplay .nowsong img{
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	
+}
+
+#nowplay .footer {
+	background-color: #E5E5E5;
+	height: 12px;
+	padding: 7px 24px;
+}
+
+#nowplay .footer a{
+	margin: 0px 12px;
+	width: 12px;
+	height: 12px;
+	display: block;
+	float: left;
+	background-image: url("../img/csg-5148a2e38765b.png");
+	background-repeat: no-repeat;
+}
+
+#main #right {
+	float: left;
+	width: 1108px;
+	height: 100%;
+}
+
+#right #options {
+	padding: 34px 48px 16px 48px;
+}
+
+#right #options a{
+	margin-right: 24px;
+}
+
+#right #options a.noactive{
+	color: #E5E5E5;
+	cursor: default;
+}
+
+#right #songs {
+	margin: 0 20px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.song {
+	margin:17px 22px 9px 22px;
+	float: left;
+}
+
+.song a {
+	display: block;
+	padding: 5px;
+}
+
+.song a:HOVER {
+	box-shadow: 0 0 3px #6699FF;
+}
+
+.song p {
+	color: #7b7b7b;
+	margin-top: 5px;
+}
+
+.song .albom {
+	font-weight: bold;
+}
+
+/*sprite style*/
+/*#container li {
+    background: url(csg-5148a2e38765b.png) no-repeat top left;
+}*/
+
+.coverflow{ background-position: 0 0; width: 20px; height: 12px; } 
+.coverflow:HOVER, .coverflow.active{ background-position: 0 -94px; width: 20px; height: 12px; } 
+.blocks{ background-position: 0 -32px; width: 20px; height: 12px; } 
+.blocks:HOVER, .blocks.active{ background-position: 0 -63px; width: 20px; height: 12px; } 
+.list{ background-position: 0 -126px; width: 20px; height: 12px; } 
+.list:HOVER, .list.active{ background-position: 0 -157px; width: 20px; height: 12px; } 
+.list_img{ background-position: 0 -188px; width: 20px; height: 12px; } 
+.list_img:HOVER, .list_img.active{ background-position: 0 -220px; width: 20px; height: 12px; } 
+
+.music{ background-position: 0 -252px; width: 17px; height: 17px; } 
+
+.plus{ background-position: 0 -289px; width: 12px; height: 12px; } 
+.plus:HOVER, .plus.active{ background-position: 0 -321px; width: 12px; height: 12px; } 
+.repeat{ background-position: 0 -353px; width: 12px; height: 12px; } 
+.repeat:HOVER, .repeat.active{ background-position: 0 -385px; width: 12px; height: 12px; } 
+.shuffle{ background-position: 0 -417px; width: 12px; height: 12px; } 
+.shuffle:HOVER, .shuffle.active{ background-position: 0 -449px; width: 12px; height: 12px; } 
+.toggle{ background-position: 0 -481px; width: 12px; height: 12px; } 
+.toggle:HOVER, .toggle.active{ background-position: 0 -513px; width: 12px; height: 12px; } 
+
+.search{ background-position: 0 -544px; width: 16px; height: 16px; } 
