@@ -72,13 +72,35 @@ a:HOVER {
 	overflow: hidden;
 }
 
-#controls {
-	float: right;
+#player {
+	float: left;
+	overflow: hidden;
+
+}
+
+#player #controls{
+	width: 350px;
+	height: 82px;
+	float: left;
+	border-right: 1px solid #E5E5E5;
+}
+
+#player #controls ul li{
+	float: left;
+}
+
+#player #play{
+	width: 410px;
+	height: 82px;
+	float: left;
+	border-right: 1px solid #E5E5E5;
+}
+
+#control {
+	float: left;
 	padding: 26px;
 	overflow: hidden;
 	border-right: 1px solid #E5E5E5;
-
-	margin-right: 130px;
 }
 
 #viewcontrol {
@@ -279,3 +301,23 @@ a:HOVER {
 .toggle:HOVER, .toggle.active{ background-position: 0 -513px; width: 12px; height: 12px; } 
 
 .search{ background-position: 0 -544px; width: 16px; height: 16px; } 
+
+
+
+/*#container li {
+    background: url(csg-5149790ad69b8.png) no-repeat top left;
+}*/
+.next{ background-position: 0 0; width: 29px; height: 29px; } 
+.next_active{ background-position: 0 -79px; width: 29px; height: 29px; } 
+.pause{ background-position: 0 -158px; width: 38px; height: 38px; } 
+.pause_active{ background-position: 0 -246px; width: 38px; height: 38px; } 
+.play{ background-position: 0 -334px; width: 38px; height: 38px; } 
+.play_active{ background-position: 0 -422px; width: 38px; height: 38px; } 
+.point{ background-position: 0 -510px; width: 12px; height: 12px; } 
+.point_active{ background-position: 0 -572px; width: 12px; height: 12px; } 
+.prev{ background-position: 0 -634px; width: 29px; height: 29px; } 
+.prev_active{ background-position: 0 -713px; width: 29px; height: 29px; } 
+.vol_medium{ background-position: 0 -792px; width: 15px; height: 13px; } 
+.vol_medium_active{ background-position: 0 -855px; width: 15px; height: 13px; } 
+.vol_min{ background-position: 0 -918px; width: 13px; height: 13px; } 
+.vol_min_active{ background-position: 0 -981px; width: 13px; height: 13px; } 
